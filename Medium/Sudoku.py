@@ -1,5 +1,8 @@
 """Runtime: 233 ms, faster than 5.28% of Python3 online submissions for Valid Sudoku.
 Memory Usage: 13.8 MB, less than 99.18% of Python3 online submissions for Valid Sudoku."""
+
+from collections import Counter
+
 class Solution:
     def isValidSudoku(self, board: list[list[str]]) -> bool:
 
@@ -58,10 +61,9 @@ class Solution:
                 remove_list.pop(0)
             else:
                 return False
-        
         return True
 
-
+# False
 su_board =  [
 [".",".",".",".","5",".",".","1","."],
 [".","4",".","3",".",".",".",".","."],
