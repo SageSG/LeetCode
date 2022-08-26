@@ -33,16 +33,11 @@ class Solution2:
         
 
 # print(Solution2.solution(Solution2, 3, [2,2,2]))
+
 global arraylist
 arraylist = []
-
-# Python3 program to print postorder
-# traversal from preorder and inorder
-# traversals
  
-# A utility function to search x in
-# arr[] of size n
-def search(arr, x, n):
+def search(n, arr, x):
       
     for i in range(n):
         if (arr[i] == x):
@@ -52,21 +47,20 @@ def search(arr, x, n):
  
 global arrayList
 arrayList = []
-def printPostOrder(In, pre, n):
+def printPostOrder(n, In, pre):
      
-    root = search(In, pre[0], n)
+    root = search(n, In, pre[0])
  
     if (root != 0):
-        printPostOrder(In, pre[1:n], root)
+        printPostOrder(root, In, pre[1:n])
  
     if (root != n - 1):
-        printPostOrder(In[root + 1 : n],
-                      pre[root + 1 : n],
-                      n - root - 1)
+        printPostOrder(n - root - 1, In[root + 1 : n],
+                      pre[root + 1 : n])
  
     arrayList.append(pre[0])
  
-printPostOrder([ 4, 2, 5, 1, 3, 6 ], [ 1, 2, 4, 5, 3, 6 ], 6)
+printPostOrder(6,[ 4, 2, 5, 1, 3, 6 ], [ 1, 2, 4, 5, 3, 6 ])
 print(arrayList)
 
 
